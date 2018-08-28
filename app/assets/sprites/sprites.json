@@ -1,0 +1,119 @@
+{
+    "frames":{
+        "arrow": {
+            "frame":{ "x":696,"y":0,"w":300,"h":300 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":300,"h":300 },
+            "sourceSize":{ "w":300,"h":300 }
+        },
+        "background": {
+            "frame":{ "x":0,"y":0,"w":694,"h":417 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":694,"h":417 },
+            "sourceSize":{ "w":694,"h":417 }
+        },
+        "rectangle": {
+            "frame":{ "x":696,"y":304,"w":182,"h":128 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":182,"h":128 },
+            "sourceSize":{ "w":182,"h":128 }
+        },
+        "roundrect": {
+            "frame":{ "x":0,"y":420,"w":144,"h":74 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":144,"h":74 },
+            "sourceSize":{ "w":144,"h":74 }
+        },
+        "spblack": {
+            "frame":{ "x":880,"y":392,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spblue": {
+            "frame":{ "x":148,"y":420,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spbrown": {
+            "frame":{ "x":232,"y":420,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spcyan": {
+            "frame":{ "x":316,"y":420,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spdarkgreen": {
+            "frame":{ "x":400,"y":420,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spgreen": {
+            "frame":{ "x":484,"y":420,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spgrey": {
+            "frame":{ "x":568,"y":420,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spmagenta": {
+            "frame":{ "x":652,"y":436,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "sporange": {
+            "frame":{ "x":880,"y":304,"w":84,"h":84 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":84,"h":84 },
+            "sourceSize":{ "w":84,"h":84 }
+        },
+        "spred": {
+            "frame":{ "x":736,"y":436,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        },
+        "spyellow": {
+            "frame":{ "x":820,"y":476,"w":83,"h":83 },
+            "rotated":false,
+            "trimmed":false,
+            "spriteSourceSize":{ "x":0,"y":0,"w":83,"h":83 },
+            "sourceSize":{ "w":83,"h":83 }
+        }
+    },
+    "meta":{
+        "app":"Paul Robson's Python texture packer",
+        "version":"1.0",
+        "image":"sprites.png",
+        "size":{
+             "w":1024,
+             "h":561
+         },
+         "scale":1
+    }
+}
