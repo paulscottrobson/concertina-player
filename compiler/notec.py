@@ -10,7 +10,7 @@
 # ****************************************************************************************
 
 # ****************************************************************************************
-#		Compiler exceptions
+#								Compiler exceptions
 # ****************************************************************************************
 
 class ConcertinaException(Exception):
@@ -27,6 +27,7 @@ class BaseNoteCompiler(object):
 		self.currentRow = None 									# Current Row identifier
 	#
 	def compileNote(self,note,details):
+		#print("==== "+note+" ====")
 		note = note.lower().strip()								# everything LC strip spaces
 		#
 		while note != "" and "+-pd".find(note[0]) >= 0:			# Process + - P D
@@ -50,7 +51,10 @@ class BaseNoteCompiler(object):
 				qbLength += 4
 
 		note = note[:pos].strip()
-		buttons = [ self.decodeButtons(note) ] if note != "&" else []
+		if note[0] == '[' and note[-1] == "]":
+			buttons = [self.decodeButtons(x) for x in note[1:-1].split(";")]
+		else:
+			buttons = [ self.decodeButtons(note) ] if note != "&" else []
 
 		if self.currentDirection is None:
 			raise ConcertinaException("Direction of play is not set")
@@ -58,9 +62,12 @@ class BaseNoteCompiler(object):
 		if details:
 			return [ self.currentDirection, buttons, qbLength ]
 
+		encode = "+" if self.currentDirection == BaseNoteCompiler.DRAW else "-"
+		encode = encode + "".join(["{0:02}".format(x) for x in buttons])
+		encode = encode + chr(qbLength - 1 + ord("a"))
+		return encode
 BaseNoteCompiler.PUSH = -1
 BaseNoteCompiler.DRAW = 1
-
 
 # ****************************************************************************************
 #						 "Absolute Beginners" format compiler
@@ -92,7 +99,6 @@ class ABSMNoteCompiler(BaseNoteCompiler):
 		#
 		#	Then 0-9 for the button
 		#
-		#print("["+descr+"]")
 		if descr == "" or descr[0] < "0" or descr[0] > "9":
 			raise ConcertinaException("Bad button number")
 		buttonID = [ 0,4,3,2,1,5,6,7,8,9 ][int(descr[0])] + self.currentRow
@@ -105,7 +111,7 @@ class ABSMNoteCompiler(BaseNoteCompiler):
 #									Factory Class
 # ****************************************************************************************
 
-class DecoderFactory(object):
+class NoteCompilerFactory(object):
 	def get(self,type):
 		type = type.lower().strip()
 		if type == "absm":
@@ -123,11 +129,11 @@ if __name__ == "__main__":
 		B2o 3o. 
 		W2 1 1 B1- W2- 
  		W3 B2 W2 B1
-		& 		
+		& G3 C3 #3 		
+		[C5;6;7]
 	""".replace("\t"," ").replace("\n"," ").split(" ")
-	nc = ABSMNoteCompiler()
+	nc = NoteCompilerFactory().get("absm")
 	for b in [x for x in bars if x.strip() != ""]:
 		print(b.strip(""),nc.compileNote(b,True))
+		print(b.strip(""),nc.compileNote(b,False))
 
-# Rests
-# Chords
