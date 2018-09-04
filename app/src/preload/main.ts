@@ -49,6 +49,11 @@ class BootState extends Phaser.State {
 
     preload() : void {
         // Load the loader image
+        this.game.load.image("loader","assets/sprites/loader.png");
+        // Identify the music that is displayed (key::music)
+        var musicKey:string = StringTrainerApplication.getURLName("music","music.json");
+        // Load the music file
+        this.game.load.json("music",musicKey);
         this.game.load.onLoadComplete.add(() => { this.game.state.start("Preload",true,false,1); },this);
     }
     
